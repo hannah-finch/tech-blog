@@ -12,6 +12,8 @@ const seedAll =  async () => {
   await seedUsers();
   await seedPosts();
   await seedComments();
+
+  console.log('Seeds have been planted');
 }
 
 seedAll();
