@@ -2,12 +2,12 @@ const { Post } = require('../models');
 
 const postData = [
   {
-    "author_id": 1,
+    "author_id": 2,
     "title": "Awesome Post",
     "body": "Words are written here for an awesome post"
   },
   {
-    "author_id": 2,
+    "author_id": 1,
     "title": "So Interesting",
     "body": "This post is so interesting, that you decided to read it. You have iffy taste."
   },
