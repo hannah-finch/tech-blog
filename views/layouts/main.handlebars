@@ -8,20 +8,22 @@
 </head>
 
 <body>
-        <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/dashboard">dashboard</a> |
-        <button id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    <main>
-      {{{ body }}}
-    </main>
+  <nav>
+    <!-- Conditionally render login or logout links -->
+    {{!-- The logout button is only showing on the homepage. I wonder it's redirecting before saving the session cookies. Go look for async await or somehting --}}
+    {{#if logged_in}}
+    <a href="/dashboard">dashboard</a> |
+    <button id="logout">logout</button>
+    {{else}}
+    <a href="/login">login</a>
+    {{/if}}
+  </nav>
 
-      {{#if logged_in}}
+  <main>
+    {{{ body }}}
+  </main>
+
+  {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
