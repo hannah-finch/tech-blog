@@ -18,5 +18,7 @@ Comment.belongsTo(Post, {
   foreignKey: 'post_id'
 })
 
+//comments should have an author
+
 module.exports = { User, Post, Comment };
 // next do seeds, make a test route
