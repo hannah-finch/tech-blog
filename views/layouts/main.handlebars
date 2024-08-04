@@ -8,9 +8,22 @@
 </head>
 
 <body>
+        <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+        <a href="/dashboard">dashboard</a> |
+        <button id="logout">logout</button>
+        {{else}}
+        <a href="/login">login</a>
+        {{/if}}
+      </nav>
     <main>
       {{{ body }}}
     </main>
+
+      {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
