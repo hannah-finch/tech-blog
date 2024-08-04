@@ -27,13 +27,15 @@ router.get('/', async (req, res) => {
   }
 });
 
-// router.get('/login', async (req, res) => {
-//   try {
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
 
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+  res.render('login');
+});
 
 // router.get('/dashboard', async (req, res) => {
 //   try {
