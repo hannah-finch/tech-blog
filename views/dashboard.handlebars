@@ -5,4 +5,20 @@
 {{> postInfo}}
 {{/each}}
 
-<button>New Post</button>
+<button id="new-post-btn">New Post</button>
+
+    <h3>Create a New Post:</h3>
+
+    <form class="new-post-form">
+      <div>
+        <label for="post-title">Post Title:</label>
+        <input type="text" id="post-title" name="post-title" />
+      </div>
+      <div class="form-group">
+        <label for="post-content">Content:</label>
+        <textarea id="post-content" name="post-content"></textarea>
+      </div>
+      <div>
+        <button type="submit">Create</button>
+      </div>
+    </form>
