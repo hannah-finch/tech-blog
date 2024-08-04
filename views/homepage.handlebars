@@ -1,4 +1,6 @@
 <h1>Homepage</h1>
 {{#each posts as |post|}}
-{{> postInfo}}
+  <a href="/posts/{{id}}">
+  {{> postInfo}}
+  </a>
 {{/each}}

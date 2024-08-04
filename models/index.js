@@ -10,5 +10,13 @@ Post.belongsTo(User, {
   foreignKey: 'author_id'
 })
 
+Post.hasMany(Comment, {
+  foreignKey: 'post_id'
+})
+
+Comment.belongsTo(Post, {
+  foreignKey: 'post_id'
+})
+
 module.exports = { User, Post, Comment };
 // next do seeds, make a test route
