@@ -13,6 +13,10 @@ body {
   font-size: 16px;
 }
 
+main {
+  padding: 20px 10%;
+}
+
 header {
   background-color: var(--brown);
   color: var(--green);
@@ -32,6 +36,11 @@ h1 {
   border-radius: 8px;
 }
 
+h2 {
+  font-weight: bold;
+  font-size: 130%;
+}
+
 nav a {
   margin-right: 40px;
   cursor: pointer;
@@ -43,4 +52,20 @@ nav a:hover {
 
 nav {
   margin-bottom: 20px;
+}
+
+/* Post Styles---------------- */
+.post-container {
+  border: 3px solid var(--brown);
+  margin-bottom: 10px;
+}
+
+.post-header {
+  background-color: var(--brown);
+  color: var(--green);
+  padding: 4px 12px;
+}
+
+.post-body-container {
+  padding: 12px;
 }

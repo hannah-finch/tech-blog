@@ -1,4 +1,11 @@
-{{date}}
-{{title}}
-{{body}}
-{{user.username}}
+<section class="post-container">
+  <div class="post-header">
+    <h2>{{title}}</h2>
+    <div class="author-container">
+      Posted by {{user.username}} on {{date}}
+    </div>
+  </div>
+  <div class="post-body-container">
+    {{body}}
+  </div>
+</section>
