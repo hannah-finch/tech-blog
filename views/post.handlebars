@@ -4,3 +4,19 @@
 {{#each comments as |comment|}}
 {{> commentInfo}}
 {{/each}}
+
+<button id="new-post-btn">New Post</button>
+
+    <h3>Create a New Comment:</h3>
+
+    <form class="new-comment-form">
+      <div>
+        <label for="comment-text">Comment:</label>
+        <textarea id="comment-text" name="comment-text"></textarea>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+  <script src="/js/post.js"></script>
