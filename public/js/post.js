@@ -1,25 +1,27 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const comment = document.querySelector('#comment-text').value.trim();
+  //this might not work on deployed, cause it depends on the url and IDK what that will be. I'm sure there is a better way to do this
+  let post_id = window.location.href.split('/')[4];
+  console.log(post_id)
 
-  //come back to this cause I haven't made the route
+  const body = document.querySelector('#comment-text').value.trim();
 
-  // if (comment) {
-  //   const response = await fetch(`/api/posts`, {
-  //     method: 'POST',
-  //     body: JSON.stringify({ title, body }),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   });
+  if (body) {
+    const response = await fetch(`/api/comments`, {
+      method: 'POST',
+      body: JSON.stringify({ body, post_id }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
 
-  //   if (response.ok) {
-  //     document.location.replace('/dashboard');
-  //   } else {
-  //     alert('Failed to create post');
-  //   }
-  // }
+    if (response.ok) {
+      document.location.replace(`/posts/${post_id}`);
+    } else {
+      alert('Failed to create post');
+    }
+  }
 };
 
 document
