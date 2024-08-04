@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Post, User } = require('../models');
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
@@ -26,5 +26,51 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// router.get('/login', async (req, res) => {
+//   try {
+
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// router.get('/dashboard', async (req, res) => {
+//   try {
+//     res.send('on dashboard');
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+// Use withAuth middleware to prevent access to route
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    // this isn't gonna work yet cause I don't have login done
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('dashboard', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// // does this route make sense for individual posts?
+// router.get('post/:post', async (req, res) => {
+//   try {
+
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router; 
