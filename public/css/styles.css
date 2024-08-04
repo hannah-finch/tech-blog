@@ -38,7 +38,7 @@ h1 {
 
 h2 {
   font-weight: bold;
-  font-size: 130%;
+  font-size: 120%;
 }
 
 nav a {
@@ -63,7 +63,10 @@ nav {
 .post-header {
   background-color: var(--brown);
   color: var(--green);
-  padding: 4px 12px;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .post-body-container {

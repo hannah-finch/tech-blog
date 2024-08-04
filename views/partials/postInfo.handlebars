@@ -1,10 +1,12 @@
 <section class="post-container">
-  <div class="post-header">
-    <h2>{{title}}</h2>
-    <div class="author-container">
-      Posted by {{user.username}} on {{format_date date}}
+  <a href="/posts/{{id}}">
+    <div class="post-header">
+      <h2>{{title}}</h2>
+      <div class="author-container">
+        Posted by {{user.username}} on {{format_date date}}
+      </div>
     </div>
-  </div>
+  </a>
   <div class="post-body-container">
     {{body}}
   </div>
