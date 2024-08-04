@@ -5,19 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog</title>
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-  <nav>
-    <!-- Conditionally render login or logout links -->
-    {{!-- The logout button is only showing on the homepage. I wonder it's redirecting before saving the session cookies. Go look for async await or somehting --}}
-    {{#if logged_in}}
-    <a href="/dashboard">dashboard</a> |
-    <button id="logout">logout</button>
-    {{else}}
-    <a href="/login">login</a>
-    {{/if}}
-  </nav>
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      {{#if logged_in}}
+      <a href="/dashboard">Dashboard</a>
+      <a id="logout">Logout</a>
+      {{else}}
+      <a href="/login">Login</a>
+      {{/if}}  
+    </nav>
+    <h1>The Tech Blog</h1>
+  </header>
 
   <main>
     {{{ body }}}
