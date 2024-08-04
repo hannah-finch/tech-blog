@@ -44,7 +44,8 @@ router.get('/', async (req, res) => {
 // });
 
 // Use withAuth middleware to prevent access to route
-router.get('/dashboard', withAuth, async (req, res) => {
+// router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/dashboard', async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     // this isn't gonna work yet cause I don't have login done
@@ -55,10 +56,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('dashboard', {
-      ...user,
-      logged_in: true
-    });
+    // res.render('dashboard', {
+    //   ...user,
+    //   logged_in: true
+    // });
+
+    res.render('dashboard')
+    
   } catch (err) {
     res.status(500).json(err);
   }
