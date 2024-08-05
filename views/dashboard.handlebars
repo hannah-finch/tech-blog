@@ -1,8 +1,4 @@
-{{#each posts as |post|}}
-  {{> postInfo}}
-{{/each}}
-
-<button id="new-post-btn">New Post</button>
+<button class="brown-btn" id="new-post-btn">+ New Post</button>
 
 <section class="post-container">
   <div class="post-header">
@@ -22,5 +18,13 @@
     
   </div>
 </section>
+
+<div class="line-horizontal"></div>
+
+{{#each posts as |post|}}
+<button class="post-edit-btn">
+  <div>{{post.title}}</div>{{format_date post.date}}
+</button>
+{{/each}}
 
 <script src="/js/dashboard.js"></script>
