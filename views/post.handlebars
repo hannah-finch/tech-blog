@@ -1,22 +1,29 @@
-<h1>Single post</h1>
 {{> postInfo}}
-
+<h3>Comments:</h3>
 {{#each comments as |comment|}}
 {{> commentInfo}}
 {{/each}}
 
-<button id="new-post-btn">New Post</button>
-
-    <h3>Create a New Comment:</h3>
+<section class="post-container">
+  <div class="post-header">
+    <div class="author-container">
+      <h2>New Comment:</h2>
+    </div>
+  </div>
+  <div class="post-body-container">
 
     <form class="new-comment-form">
-      <div>
+
         <label for="comment-text">Comment:</label>
         <textarea id="comment-text" name="comment-text"></textarea>
-      </div>
-      <div>
+
+
         <button type="submit">Submit</button>
-      </div>
+
     </form>
+  </div>
+</section>
+
+
 
   <script src="/js/post.js"></script>

@@ -36,9 +36,13 @@ h1 {
   border-radius: 8px;
 }
 
-h2 {
+h2, h3 {
   font-weight: bold;
   font-size: 120%;
+}
+
+h3 {
+  color: var(--brown);
 }
 
 nav a {
@@ -54,6 +58,20 @@ nav {
   margin-bottom: 20px;
 }
 
+button {
+  background-color: var(--gray-light);
+  color: var(--green);
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: .2s;
+}
+
+button:hover {
+  background-color: var(--gray);
+}
+
 /* Post Styles---------------- */
 .post-container {
   border: 3px solid var(--brown);
@@ -61,9 +79,10 @@ nav {
 }
 
 .post-header {
+  height: 22px;
   background-color: var(--brown);
   color: var(--green);
-  padding: 6px 12px;
+  padding: 6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,4 +90,14 @@ nav {
 
 .post-body-container {
   padding: 12px;
+}
+
+/* Form Styles ------------------ */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  margin-bottom: 10px;
 }
