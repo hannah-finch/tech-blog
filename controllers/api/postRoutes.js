@@ -32,17 +32,26 @@ router.post('/', withAuth, async (req, res) => {
   }
 })
 
-// router.post('/:id', withAuth, async (req, res) => {
-//   try {
-//     const newComment = await Comment.create( {
-//       ...req.body,
-//       author_id: req.session.user_id,
-//     });
-//     res.status(200).json(newComment);
-//   } catch(err) {
-//     res.status(400).json(err);
-//   }
-// })
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.destroy({
+      where: {
+        id: req.params.id,
+        author_id: req.session.user_id,
+      },
+    });
+
+    if (!postData) {
+      res.status(404).json({ message: 'Post does not exist' });
+      return;
+    }
+
+    res.status(200).json(postData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 
 module.exports = router;
