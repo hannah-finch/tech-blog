@@ -124,6 +124,10 @@ button:hover {
   font-size: 12px;
 }
 
+.post-list {
+  width: 100%;
+}
+
 .post-list-itm {
   background-color: var(--gray-light);
   color: var(--green);
