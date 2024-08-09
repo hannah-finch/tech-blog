@@ -89,10 +89,9 @@ button:hover {
   background-color: var(--gray);
 }
 
-.post-edit-btn {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+.delete-btn {
+  margin: 2px;
+  border: 1px solid var(--green);
 }
 
 .brown-btn {
@@ -123,6 +122,18 @@ button:hover {
 
 .author-container {
   font-size: 12px;
+}
+
+.post-list-itm {
+  background-color: var(--gray-light);
+  color: var(--green);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin-bottom: 8px;
 }
 
 /* Form Styles ------------------ */

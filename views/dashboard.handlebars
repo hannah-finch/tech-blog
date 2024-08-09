@@ -22,9 +22,10 @@
 <div class="line-horizontal"></div>
 
 {{#each posts as |post|}}
-<button class="post-edit-btn">
+<div class="post-list-itm">
   <div>{{post.title}}</div>{{format_date post.date}}
-</button>
+  <button class="delete-btn" data-id="{{post.id}}">Delete</button>
+</div>
 {{/each}}
 
 <script src="/js/dashboard.js"></script>
