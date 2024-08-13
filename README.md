@@ -2,7 +2,7 @@
 
 ## Description
 
-A CMS style blog site where developers can publish their blog posts and comment on other developers’ posts
+A CMS style blog site where developers can publish their blog posts and comment on other developers’ posts. The deployed application can be seen here: https://tech-blog-anf7.onrender.com/ 
 
 ## Usage
 
