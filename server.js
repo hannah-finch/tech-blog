@@ -1,7 +1,3 @@
-// Note of where I'm at: I am doing a weird thing where I was making dashboard homeRoutes before login, also no dashboard api route, do I need one, it wants just user data with post, so user route prob. I think next I wanna just do login stuff cause it's half started anyway.
-
-
-
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
