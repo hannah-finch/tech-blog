@@ -23,10 +23,12 @@
 
 <div class="post-list">
 {{#each posts as |post|}}
-<div class="post-list-itm">
-  <div>{{post.title}} | {{format_date post.date}}</div>
-  <button class="delete-btn" data-id="{{post.id}}">Delete</button>
-</div>
+<a href="/posts/{{id}}">
+  <div class="post-list-itm">
+    <div style="display: flex;">{{post.title}}<p style="margin: 0 16px;"> | </p>{{format_date post.date}}</div>
+    <button class="delete-btn" data-id="{{post.id}}">Delete</button>
+  </div>
+</a>
 {{/each}}
 </div>
 
